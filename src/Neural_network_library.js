@@ -123,6 +123,19 @@ class Neural_Network {
 				const output = preOutput.length > 1 ? preOutput[0] : preOutput
 				const hidden_output = preOutput.length > 1 ? preOutput[1] : null
 
+				// console.log(output)
+
+				// const result = []
+				// for (let i = 0; i < output.length; i++) {
+				// 	result.push(Math.round(output[i]))
+				// }
+
+				// if (JSON.stringify(result) === JSON.stringify(expectations[singleInputData])) {
+				// 	trainingResults.push(1)
+				// } else {
+				// 	trainingResults.push(0)
+				// }
+
 				const outputErrors = []
 				for (let i = 0; i < output.length; i++) {
 					outputErrors.push(expectations[singleInputData][i] - output[i])
@@ -197,6 +210,27 @@ class Neural_Network {
 				}
 			}
 		}
+
+		const trainingResults = []
+
+		for (let singleInputData = 0; singleInputData < inputData.length; singleInputData++) {
+			const output = this.predict(inputData[singleInputData])
+
+			const result = []
+			for (let i = 0; i < output.length; i++) {
+				result.push(Math.round(output[i]))
+			}
+
+			result[output.indexOf(Math.max(...output))] = 1
+
+			if (JSON.stringify(result) === JSON.stringify(expectations[singleInputData])) {
+				trainingResults.push(1)
+			} else {
+				trainingResults.push(0)
+			}
+		}	
+
+		return Math.round((trainingResults.reduce((acc, elem) => acc + elem) / inputData.length) * 1000) / 10 + '%'
 	}
 }
 

@@ -24,12 +24,15 @@ train(**input_data**, **target**, **epochs**, **learningRate** *= 0.1*)
 **learningRate** - type: float *by default **0.1***
 
 ```javascript
-  nn.train(
+  const nnAccuracy = nn.train(
     [[0, 0], [1, 0], [0, 1], [1, 1]], // input_data
     [[0], [1], [0], [1]], // target
     50, // epochs
     0.1 // learningRate
   )
+
+  // Accuracy of neural network after training
+  console.log(nnAccuracy)
 ```
 <hr>
 
@@ -49,12 +52,15 @@ predict(**input**)
 ```javascript
   const nn = new NeuralNetwork(2, 3, 1, [4, 5, 3])
 
-  nn.train(
+  const nnAccuracy = nn.train(
     [[0, 0], [1, 0], [0, 1], [1, 1]], // input_data
     [[0], [1], [0], [1]], // target
     50, // epochs
     0.1 // learningRate
   )
+
+  // Accuracy of neural network after training
+  console.log(nnAccuracy)
 
   nn.predict([0, 1]) // 0
 ```
