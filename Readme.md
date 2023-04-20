@@ -20,7 +20,7 @@ train(**input_data**, **target**, **epochs**, **learningRate** *= 0.1*)
 
 **input_data** - type: array of arrays of numbers
 **target** - type: array of arrays of numbers
-**epochs** - type: number
+**epochs** - type: number<br>
 **learningRate** - type: float *by default **0.1***
 
 ```javascript
