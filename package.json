@@ -1,0 +1,19 @@
+{
+  "name": "xaxaxage-nn-library",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\"><b>Neural Network Library</b></h1>",
+  "main": "Neural_network_library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaxaxage/neural-network-library.git"
+  },
+  "author": "George Mishchenko georgemishchenko@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xaxaxage/neural-network-library/issues"
+  },
+  "homepage": "https://github.com/xaxaxage/neural-network-library#readme"
+}
